@@ -1,0 +1,21 @@
+'''
+Two Sum problem optimized using hashmaps
+'''
+
+def twoSum(nums, target):
+        nums = nums
+        output = []
+        hashmap  = {}
+
+        for i in range(len(nums)):
+            sub = target - nums[i]
+
+            if sub in hashmap.keys():
+                output.append(hashmap[sub])
+                output.append(i)
+                break
+            else:
+                hashmap[nums[i]] = i
+
+
+        return output
